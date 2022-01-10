@@ -1,0 +1,18 @@
+General:
+Upon execution, if no entry for the day has been inputted ask for the quality of each
+topic and save those to a file. If entry has been entered for the day, output message 
+indicating that entry has been entered already. The program will have to read the time, 
+day, and status of entry at the beginning of execution before prompting user input. 
+On saturday - after 7 entries have been entered - the program will present plotted data 
+with data analyses like averages, what and how many good days there were, highest and 
+lowest rated days, and what areas of improvement are needed(?) The program should also 
+be aware of any skipped days. If days are skipped, then it should just roll over to the 
+next day.
+
+01/10/2022 ==============
+I neeed to figure out one of the two: have the program read from the bottom of the file
+or append to the beginning of the file. 
+Note: there will be text between dates for the ratings. So that will influence where I
+read from in the file. 
+[x] Read date and report date
+[x] Write to file
