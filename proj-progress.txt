@@ -14,6 +14,7 @@ I've changed the format a little bit. Now I have three functions.
 The highlight is the usage of vector strings. We can use vector strings to read part of the input.
 ref:
     https://stackoverflow.com/questions/29143603/reading-part-of-a-line-of-txt-file-in-c
+    https://stackoverflow.com/questions/236129/how-do-i-iterate-over-the-words-of-a-string
 
 Next step is to implement this in order to read only the date, and then compare them. 
 
