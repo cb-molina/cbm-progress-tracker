@@ -2,9 +2,11 @@
 #include <iostream>
 #include <ctime>
 #include <fstream>
-#include <string>
+#include <cstring>
+#include <vector>
 // using namespace std;
 
+std::fstream sfile; 
 
 Proglog::Proglog(void)
 {
@@ -13,14 +15,18 @@ Proglog::Proglog(void)
 
 void Proglog::getweekday(void)
 {
-    std::fstream sfile; 
     sfile.open("log.txt",std::ios::in);
-    std::string firstline;
-    std::getline(sfile, firstline);
+    std::string fileline;
+    
+    while(!sfile.eof()) // Grabs the last line
+    {
+        std::getline(sfile, fileline);
+    }
     sfile.close();
 
-    std::cout << "Date from file: " << firstline << std::endl;
-
+    std::cout << "Date from file: " << fileline << std::endl; // This is grabbing the first line
+    
+    
     sfile.open("log.txt",std::ios_base::app); // append mode
     time_t now = time(0);
     tm *ltm = localtime(&now);
@@ -34,7 +40,7 @@ void Proglog::getweekday(void)
     std::cout << "Today is: ";
     std::cout << date <<std::endl;
 
-    if (date == firstline)
+    if (date == fileline)
     {
         std::cout << "Dates are the same" << std::endl;
         sfile.close();
@@ -42,7 +48,7 @@ void Proglog::getweekday(void)
     else
     {
         std::cout << "Dates are not the same" << std::endl; 
-        sfile << std::endl << date;
+        sfile << " " << date;
         sfile.close();
     }
 }

@@ -9,6 +9,15 @@ lowest rated days, and what areas of improvement are needed(?) The program shoul
 be aware of any skipped days. If days are skipped, then it should just roll over to the 
 next day.
 
+02/03/2022 ==============
+I need to think in depth as to how the program reads and writes - specifically the stream of data.
+Perhaps I can have the stream of data written as:
+    02/03/2022 a b c d e f g
+    [date] [rate 1] [rate 2] [rate 3] ... [rate n]
+Then the program would have to read the date only, then compare to the current date. 
+
+Afterwards within the same line, input the ratings asked by the program. 
+
 01/10/2022 ==============
 I neeed to figure out one of the two: have the program read from the bottom of the file
 or append to the beginning of the file. 
