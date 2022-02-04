@@ -41,12 +41,11 @@ void Proglog::compare(void)
     if (date.at(0) == fileinput.at(0))
     {
         std::cout << "Dates are the same" << std::endl;
-        sfile.close();
     }
     else
     {
         std::cout << "Dates are not the same" << std::endl; 
         sfile << " " << date.at(0);
-        sfile.close();
     }
+    sfile.close();
 }
