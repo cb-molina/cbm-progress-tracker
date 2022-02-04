@@ -18,10 +18,7 @@ Proglog::Proglog(void)
 void Proglog::getfileinput(void)
 {
     sfile.open("log.txt",std::ios::in);
-    while(!sfile.eof()) // Grabs the last line
-    {
-        std::getline(sfile, fileinput.at(0));
-    }
+    while(!sfile.eof()) std::getline(sfile, fileinput.at(0)); // Grabs the last line
     sfile.close();
 
     std::cout << "Date from file: " << fileinput.at(0) << std::endl; // This is grabbing the first line
