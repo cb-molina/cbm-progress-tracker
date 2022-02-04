@@ -9,6 +9,14 @@ lowest rated days, and what areas of improvement are needed(?) The program shoul
 be aware of any skipped days. If days are skipped, then it should just roll over to the 
 next day.
 
+02/04/2022 ==============
+I've changed the format a little bit. Now I have three functions.
+The highlight is the usage of vector strings. We can use vector strings to read part of the input.
+ref:
+    https://stackoverflow.com/questions/29143603/reading-part-of-a-line-of-txt-file-in-c
+
+Next step is to implement this in order to read only the date, and then compare them. 
+
 02/03/2022 ==============
 I need to think in depth as to how the program reads and writes - specifically the stream of data.
 Perhaps I can have the stream of data written as:

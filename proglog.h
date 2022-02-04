@@ -7,6 +7,8 @@ class Proglog
     public:
         Proglog(void);
         void getweekday(void);
+        void getfileinput(void);
+        void compare(void);
     private:
         int wkday;
 };

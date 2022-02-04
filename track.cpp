@@ -7,7 +7,9 @@ int main()
 {
     // Start up
     Proglog p;
+    p.getfileinput();
     p.getweekday();
+    p.compare();
     
 
 }

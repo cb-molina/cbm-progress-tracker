@@ -6,41 +6,42 @@
 #include <vector>
 // using namespace std;
 
-std::fstream sfile; 
+std::fstream sfile;
+std::vector<std::string> fileinput(2);
+std::vector<std::string> date(2);
 
 Proglog::Proglog(void)
 {
     std::cout << "Object created" << std::endl;
 }
 
-void Proglog::getweekday(void)
+void Proglog::getfileinput(void)
 {
     sfile.open("log.txt",std::ios::in);
-    std::string fileline;
-    
     while(!sfile.eof()) // Grabs the last line
     {
-        std::getline(sfile, fileline);
+        std::getline(sfile, fileinput.at(0));
     }
     sfile.close();
 
-    std::cout << "Date from file: " << fileline << std::endl; // This is grabbing the first line
-    
-    
+    std::cout << "Date from file: " << fileinput.at(0) << std::endl; // This is grabbing the first line
+}
+
+void Proglog::getweekday(void)
+{    
     sfile.open("log.txt",std::ios_base::app); // append mode
     time_t now = time(0);
     tm *ltm = localtime(&now);
 
-    std::string mon = std::to_string(1+ ltm->tm_mon);
-    std::string mday = std::to_string(ltm->tm_mday);
-    std::string year = std::to_string(1900 + ltm->tm_year);
-
-    std::string date = mon + '/' + mday + '/' + year;
+    date.at(0) = std::to_string(1+ ltm->tm_mon) + '/' + std::to_string(ltm->tm_mday) + '/' + std::to_string(1900 + ltm->tm_year);
 
     std::cout << "Today is: ";
-    std::cout << date <<std::endl;
+    std::cout << date.at(0) <<std::endl;
+}
 
-    if (date == fileline)
+void Proglog::compare(void)
+{
+    if (date.at(0) == fileinput.at(0))
     {
         std::cout << "Dates are the same" << std::endl;
         sfile.close();
@@ -48,7 +49,7 @@ void Proglog::getweekday(void)
     else
     {
         std::cout << "Dates are not the same" << std::endl; 
-        sfile << " " << date;
+        sfile << " " << date.at(0);
         sfile.close();
     }
 }
