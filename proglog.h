@@ -6,9 +6,14 @@ class Proglog
 {
     public:
         Proglog(void);
-        void getweekday(void);
+        void logentry(void);
+        void readlog(void);
+        void logdate(void);
+        bool logcheck(void);
     private:
         int wkday;
+        char date;
+        char * lastentry;
 };
 
 #endif

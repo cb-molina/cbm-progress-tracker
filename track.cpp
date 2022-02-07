@@ -7,7 +7,7 @@ int main()
 {
     // Start up
     Proglog p;
-    p.getweekday();
-    
+    p.readlog();
+    p.logdate();
 
 }

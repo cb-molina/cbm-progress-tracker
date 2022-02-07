@@ -9,6 +9,29 @@ lowest rated days, and what areas of improvement are needed(?) The program shoul
 be aware of any skipped days. If days are skipped, then it should just roll over to the 
 next day.
 
+01/31/2022 ==============
+
+
+01/24/2022 ==============
+I'm having a huge issue with logdate right now. I want to convert todays date into a char, but I end up converting them into random characters.
+
+---
+Stopping here, 
+[] string logdate(void) - function member that reads and stores the current date
+logdate is kind of a hassle right now. I think I can turn this into a char? But I think I would also have to change lastline into a char. 
+[] bool logcheck(void) - function member that compares the last line and current date
+[] void logentry(void) - function member that decides to write to log
+
+---
+Okay, in hindsight, I need to create more function members to do separate tasks. As of writing this - I only have logentry(), which opens the file, finds and stores the last line, gets the current date and outputs the date, then compares the last line and the date. 
+What I should do: 
+[x] void readlog(void) - function member that opens the file and reads and stores the last line
+
+---
+I think I'm settling with having the program read the last entry in the file, then write to the file by appending to the bottom.
+[x] Read bottom
+[x] Write to bottom
+
 01/10/2022 ==============
 I neeed to figure out one of the two: have the program read from the bottom of the file
 or append to the beginning of the file. 
