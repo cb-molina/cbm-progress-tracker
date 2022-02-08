@@ -23,6 +23,23 @@ void Proglog::getfileinput(void)
 
     std::cout << "Date from file: " << fileinput.at(0) << std::endl; // This is grabbing the first line
 
+    // std::cout << fileinput[0].size() << std::endl;
+
+    for (int i = 0; i < fileinput[0].size(); i++)
+    {
+        if (fileinput[0][i] == ' ')
+        {
+            break;
+        }
+        else 
+        {
+            std::cout << fileinput[0][i];
+            date[1][i] = fileinput[0][i];
+            // std::cout << date[0][i];
+        }
+    }
+    std::cout << std::endl << std::endl;
+
 }
 
 void Proglog::getweekday(void)
@@ -35,21 +52,20 @@ void Proglog::getweekday(void)
 
     std::cout << "Today is: ";
     std::cout << date.at(0) <<std::endl;
-
-    // while (int i = 0; )
-    // std::cout << date[0][6] <<std::endl;
 }
 
 void Proglog::compare(void)
 {
-    if (date.at(0) == fileinput.at(0))
-    {
-        std::cout << "Dates are the same" << std::endl;
-    }
-    else
-    {
-        std::cout << "Dates are not the same" << std::endl; 
-        sfile << std::endl << date.at(0);
-    }
+    std::cout << "Date for today: " << date.at(0) << std::endl;
+    std::cout << "Date from file: " << date.at(1) << std::endl;
+    // if (date.at(0) == date.at(1))
+    // {
+    //     std::cout << "Dates are the same" << std::endl;
+    // }
+    // else
+    // {
+    //     std::cout << "Dates are not the same" << std::endl; 
+    //     sfile << std::endl << date.at(0);
+    // }
     sfile.close();
 }
