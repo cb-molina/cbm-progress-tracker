@@ -22,6 +22,7 @@ void Proglog::getfileinput(void)
     sfile.close();
 
     std::cout << "Date from file: " << fileinput.at(0) << std::endl; // This is grabbing the first line
+
 }
 
 void Proglog::getweekday(void)
@@ -34,6 +35,9 @@ void Proglog::getweekday(void)
 
     std::cout << "Today is: ";
     std::cout << date.at(0) <<std::endl;
+
+    // while (int i = 0; )
+    // std::cout << date[0][6] <<std::endl;
 }
 
 void Proglog::compare(void)
@@ -45,7 +49,7 @@ void Proglog::compare(void)
     else
     {
         std::cout << "Dates are not the same" << std::endl; 
-        sfile << " " << date.at(0);
+        sfile << std::endl << date.at(0);
     }
     sfile.close();
 }
