@@ -10,6 +10,9 @@ std::fstream sfile;
 std::vector<std::string> fileinput(2);
 std::vector<std::string> date(2);
 
+// Testing variables
+std::string filestr;
+
 Proglog::Proglog(void)
 {
     std::cout << "Object created" << std::endl;
@@ -17,29 +20,19 @@ Proglog::Proglog(void)
 
 void Proglog::getfileinput(void)
 {
+    std::string filestr;
     sfile.open("log.txt",std::ios::in);
     while(!sfile.eof()) std::getline(sfile, fileinput.at(0)); // Grabs the last line
     sfile.close();
 
-    std::cout << "Date from file: " << fileinput.at(0) << std::endl; // This is grabbing the first line
-
-    // std::cout << fileinput[0].size() << std::endl;
+    std::cout << "Stream from file: " << fileinput.at(0) << std::endl; // This is grabbing the last line from file
 
     for (int i = 0; i < fileinput[0].size(); i++)
     {
-        if (fileinput[0][i] == ' ')
-        {
-            break;
-        }
-        else 
-        {
-            std::cout << fileinput[0][i];
-            date[1][i] = fileinput[0][i];
-            // std::cout << date[0][i];
-        }
+        if (fileinput[0][i] == ' ') break;
+        else filestr = filestr + fileinput[0][i];
     }
-    std::cout << std::endl << std::endl;
-
+    date.at(1) = filestr;
 }
 
 void Proglog::getweekday(void)
@@ -58,14 +51,18 @@ void Proglog::compare(void)
 {
     std::cout << "Date for today: " << date.at(0) << std::endl;
     std::cout << "Date from file: " << date.at(1) << std::endl;
-    // if (date.at(0) == date.at(1))
-    // {
-    //     std::cout << "Dates are the same" << std::endl;
-    // }
-    // else
-    // {
-    //     std::cout << "Dates are not the same" << std::endl; 
-    //     sfile << std::endl << date.at(0);
-    // }
+
+    if (date.at(0) == date.at(1)) std::cout << "Dates are the same" << std::endl;
+    else
+    {
+        std::cout << "Dates are not the same" << std::endl; 
+        sfile << std::endl << date.at(0);
+    }
     sfile.close();
 }
+
+// void Proglog::logdata(void)
+// {
+//     sfile.open("log.txt",std::ios_base::app);
+
+// }

@@ -13,6 +13,13 @@ Quick access to dir on cygwin:
 cd D:/christian_b_molina/Projects/program-projects/cbm-progress-tracker
 
 02/09/2022 ==============
+My previous entry was correct, I just made a string variable called filestr, and appended the fileinput[1][i] data into filestr, then equate data.at(1) to filestr!
+
+Now I need to work on entering the user input for the survey data.
+I'll create a member function called void logdata(void), it will provide a space after the date once it is written to the file, then prompt the user to rate certain categories. After each rate, it will provide a space in between the rates. Like so:
+    02/03/2022 a b c d e f g
+    [date] [rate 1] [rate 2] [rate 3] ... [rate n]
+---
 The use of vector strings works pretty well. My only issue now is extracting the date from the file stream in order to compare it with the current date.
 Using
     date[1][i] = fileinput[0][i];

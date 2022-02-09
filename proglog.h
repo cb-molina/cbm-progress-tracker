@@ -9,6 +9,7 @@ class Proglog
         void getweekday(void);
         void getfileinput(void);
         void compare(void);
+        void logdata(void);
     private:
         int wkday;
 };
