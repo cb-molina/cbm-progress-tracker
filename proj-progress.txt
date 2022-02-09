@@ -13,6 +13,8 @@ Quick access to dir on cygwin:
 cd D:/christian_b_molina/Projects/program-projects/cbm-progress-tracker
 
 02/09/2022 ==============
+Created logdata function member, and I've outlined some methods of obtaining inputs.
+---
 My previous entry was correct, I just made a string variable called filestr, and appended the fileinput[1][i] data into filestr, then equate data.at(1) to filestr!
 
 Now I need to work on entering the user input for the survey data.

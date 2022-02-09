@@ -10,6 +10,7 @@ int main()
     p.getfileinput();
     p.getweekday();
     p.compare();
+    p.logdata();
     
 
 }

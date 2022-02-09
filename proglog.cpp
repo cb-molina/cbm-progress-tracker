@@ -61,8 +61,12 @@ void Proglog::compare(void)
     sfile.close();
 }
 
-// void Proglog::logdata(void)
-// {
-//     sfile.open("log.txt",std::ios_base::app);
-
-// }
+void Proglog::logdata(void)
+{
+    std::string test;
+    int rate1, rate2, rate3, rate4, rate5;
+    std::cout << "Input test, enter input: " ;
+    // std::getline(std::cin, test); 
+    std::cin >> rate1 >> rate2 >> rate3 >> rate4 >> rate5;
+    std::cout << rate1 << " " << rate2 << " "  << rate3 << " "  << rate4 << " "  << rate5 << std::endl;
+}
