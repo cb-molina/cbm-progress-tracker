@@ -12,6 +12,12 @@ next day.
 Quick access to dir on cygwin: 
 cd D:/christian_b_molina/Projects/program-projects/cbm-progress-tracker
 
+02/09/2022 ==============
+The use of vector strings works pretty well. My only issue now is extracting the date from the file stream in order to compare it with the current date.
+Using
+    date[1][i] = fileinput[0][i];
+Causes blank characters to be placed inside date[1][i], this could be because fileinput[1][i] returns a reference to the value. But I think it's still possible to copy what is in a reference to another variable. I think this may be an issue with date(1), and instead I should have fileinput[1][i] return to a separate string and then have all that inserted into date.at(1).
+
 02/04/2022 ==============
 I've changed the format a little bit. Now I have three functions.
 The highlight is the usage of vector strings. We can use vector strings to read part of the input.
