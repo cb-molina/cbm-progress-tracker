@@ -12,6 +12,14 @@ next day.
 Quick access to dir on cygwin: 
 cd D:/christian_b_molina/Projects/program-projects/cbm-progress-tracker
 
+02/10/2022 ==============
+The user input into the files is working properly. I may change how it functions later, but for now it's good. At this point, I will merge the YOGA branch with the main branch. 
+Some potential next steps (priority based on order of precedence)
+    - Having the program check if a file called "log.txt" exists in the local folder, if it doesn't exist create it, otherwise continue the program. 
+    - extracting the user data from file and then to analyze them. 
+    - implementing a destructor
+    - 
+
 02/09/2022 ==============
 Created logdata function member, and I've outlined some methods of obtaining inputs.
 ---

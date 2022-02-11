@@ -17,6 +17,10 @@ Proglog::Proglog(void)
 {
     std::cout << "Object created" << std::endl;
 }
+Proglog::~Proglog()
+{
+    std::cout << "Object destroyed" << std::endl;
+}
 
 void Proglog::getfileinput(void)
 {
@@ -37,7 +41,6 @@ void Proglog::getfileinput(void)
 
 void Proglog::getweekday(void)
 {    
-    sfile.open("log.txt",std::ios_base::app); // append mode
     time_t now = time(0);
     tm *ltm = localtime(&now);
 
@@ -49,6 +52,7 @@ void Proglog::getweekday(void)
 
 void Proglog::compare(void)
 {
+    sfile.open("log.txt",std::ios_base::app); // append mode
     std::cout << "Date for today: " << date.at(0) << std::endl;
     std::cout << "Date from file: " << date.at(1) << std::endl;
 
@@ -57,16 +61,20 @@ void Proglog::compare(void)
     {
         std::cout << "Dates are not the same" << std::endl; 
         sfile << std::endl << date.at(0);
+        Proglog::logdata();
     }
     sfile.close();
 }
 
 void Proglog::logdata(void)
 {
+    // sfile.open("log.txt",std::ios_base::app); // append mode
     std::string test;
     int rate1, rate2, rate3, rate4, rate5;
-    std::cout << "Input test, enter input: " ;
-    // std::getline(std::cin, test); 
+    std::cout << "Input test, enter input: " ; // Change this to a proper prompt
+    
     std::cin >> rate1 >> rate2 >> rate3 >> rate4 >> rate5;
-    std::cout << rate1 << " " << rate2 << " "  << rate3 << " "  << rate4 << " "  << rate5 << std::endl;
+    sfile << " " << rate1 << " " << rate2 << " "  << rate3 << " "  << rate4 << " "  << rate5;
+    
+    // sfile.close();
 }
